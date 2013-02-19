@@ -28,7 +28,7 @@ namespace Chat
             {
                 string messageToBeSent = Console.ReadLine();
                 s.Send(Encoding.ASCII.GetBytes(messageToBeSent + "\n"));
-                if (messageToBeSent == "exit2")
+                if (messageToBeSent == "exit")
                 {
                     break;
                 }
