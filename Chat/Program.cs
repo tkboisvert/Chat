@@ -16,7 +16,7 @@ namespace Chat
 
             listeningTask.Start();
 
-            IPAddress[] IPs = Dns.GetHostAddresses("vivian");
+            IPAddress[] IPs = Dns.GetHostAddresses("InspironLT");
 
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Console.WriteLine("Connecting to vivain. . . ");
@@ -42,8 +42,8 @@ namespace Chat
 
             Socket listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            IPAddress hostIP = (Dns.Resolve(IPAddress.Any.ToString())).AddressList[0];
-            IPEndPoint ep = new IPEndPoint(hostIP, 12345);
+            IPAddress[] IPs = Dns.GetHostAddresses("InspironLT");
+            IPEndPoint ep = new IPEndPoint(IPs[1], 12345);
             listenSocket.Bind(ep);
             listenSocket.Listen(100);
             Socket handler = listenSocket.Accept();
